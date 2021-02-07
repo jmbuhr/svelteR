@@ -85,6 +85,13 @@ This will create the necessary files in a folder of your app named
 
 ## Demo Time!
 
+debug gh-pages actions:
+
+```{r}
+system.file("svelte-app", package = "svelteR")
+```
+
+
 Embed the same app multiple times with different properties.
 `props` takes and R list which is converted to JSON to be used
 in the app:
