@@ -37,14 +37,10 @@ renv::install("jmbuhr/svelteR")
 
 ## Features
 
-Embed the same app multiple times with different properties:
+- Embed the same app multiple times with different properties
+- Embed multiple different apps
+- Embed from a local folder or a public url
+  (the second is work in process)
 
-```{r, eval=FALSE}
-svelteR::include_svelte(name = "svelte-app",
-                        # path relative to your Rmd file
-                        path = system.file("svelte-app", package = "svelteR"),
-                        props = list(name = "First"))
-```
-
-
+See this [example](articles/svelteR.html#demo-time-)
 

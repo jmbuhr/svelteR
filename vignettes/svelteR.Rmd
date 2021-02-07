@@ -1,0 +1,127 @@
+---
+title: "Get Started"
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Setup
+
+`svelteR` assumes that the app structure was created
+using this [svelte template](https://github.com/sveltejs/template).
+In short, you ran this code in a terminal:
+
+```{bash, eval=FALSE}
+npx degit sveltejs/template svelte-app
+cd svelte-app
+npm install
+```
+
+Where "svelte-app" is the name of the folder you want to create the app in.
+There are two things you need to take care of in your svelte app
+to ensure that it works as a standalone app, as well as embedded
+into this document.
+
+Modify `index.html` to look like this:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+	<title>Svelte app</title>
+	<link rel='icon' type='image/png' href='/favicon.png'>
+	<link rel='stylesheet' href='/global.css'>
+	<link rel='stylesheet' href='/build/bundle.css'>
+	<script defer onload="window['svelte-app']('body', {name: 'main test'})" src='/build/bundle.js'></script>
+</head>
+<body id="body">
+</body>
+</html>
+```
+
+And `src/main.js` like this:
+
+```js
+import App from './App.svelte';
+
+const app = (targetId, props) => new App({
+	target: document.getElementById(targetId),
+	props: props
+});
+
+// 'svelte-app' has to be a unique name for your app.
+// make sure it is the same as in window['svelte-app'] in index.html
+// a good convention is to use the name of your app-directory
+window['svelte-app'] = app;
+export default app;
+```
+
+`app` is now a function of a `targetID` and some properties.
+This allows us to include the same app multiple times into
+different divs and pass different properties to them.
+
+Then run the following in the app directory to preview the app
+on localhost while working:
+
+```{bash, eval=FALSE}
+npm run dev
+```
+
+And finally build the app
+(so that you can ship it or include it in this document):
+
+```{bash, eval=FALSE}
+npm run build
+```
+
+This will create the necessary files in a folder of your app named
+"public/build/", which `svelteR` assumes to exist.
+
+## Demo Time!
+
+Embed the same app multiple times with different properties.
+`props` takes and R list which is converted to JSON to be used
+in the app:
+
+```{r}
+svelteR::include_svelte(name = "svelte-app",
+                        # path relative to your Rmd file
+                        path = system.file("svelte-app", package = "svelteR"),
+                        props = list(name = "First"))
+```
+
+And again:
+
+```{r}
+svelteR::include_svelte(name = "svelte-app",
+                        # path relative to your Rmd file
+                        path = system.file("svelte-app", package = "svelteR"),
+                        props = list(name = "Second"))
+```
+
+## CSS Priority
+
+Note that the demo app included in this package
+(see `system.file("svelte-app", package = "svelteR")`)
+looks slightly different when built on it's own,
+in a fresh Rmarkdown document or in this pkgdown documentation
+website.
+The reason for this is the order in which css files are imported.
+I am willing to sell this as a feature instead of a bug.
+You can use this to your advantage, if you know the rules.
+So here they come:
+
+- Custom css for your Rmarkdown document, under which
+  the bootstrap framework of this documentation site made
+  with pkgdown falls, will have precedence over
+  `global.css` in your `svelte-app/public/` folder.
+- css defined in individual components of the svelte app,
+  or the main `App.svelte` will have precedence over both.
+  
+
