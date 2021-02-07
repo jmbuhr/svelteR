@@ -91,7 +91,7 @@ Embed the same app multiple times with different properties.
 `props` takes and R list which is converted to JSON to be used
 in the app.
 The path should be relative to you Rmd file.
-You can use and example app installed with this package with:
+You can use the example app installed with this package via:
 
 ```{r, eval=FALSE}
 svelteR::include_svelte(name = "svelte-app",
