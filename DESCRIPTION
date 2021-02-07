@@ -19,3 +19,5 @@ Imports:
     jsonlite,
     knitr,
     stringr
+URL: https://github.com/jmbuhr/svelteR
+BugReports: https://github.com/jmbuhr/svelteR/issues
