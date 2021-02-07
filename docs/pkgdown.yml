@@ -1,0 +1,10 @@
+pandoc: 2.11.2
+pkgdown: 1.6.1
+pkgdown_sha: ~
+articles:
+  svelteR: svelteR.html
+last_built: 2021-02-07T17:47Z
+urls:
+  reference: https://jmbuhr.de/svelteR/reference
+  article: https://jmbuhr.de/svelteR/articles
+
