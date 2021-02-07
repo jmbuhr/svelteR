@@ -1,9 +1,8 @@
 ---
 title: "Get Started"
 resource_files:
-  - '`r system.file("svelte-app", package = "svelteR")`'
+  - '../inst/svelte-app/'
 ---
-
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
@@ -90,30 +89,44 @@ This will create the necessary files in a folder of your app named
 
 Embed the same app multiple times with different properties.
 `props` takes and R list which is converted to JSON to be used
-in the app:
+in the app.
+The path should be relative to you Rmd file.
+You can use and example app installed with this package with:
 
-```{r}
+```{r, eval=FALSE}
 svelteR::include_svelte(name = "svelte-app",
                         # path relative to your Rmd file
                         path = system.file("svelte-app", package = "svelteR"),
                         props = list(name = "First"))
 ```
 
-And again:
+This will embed everything the app needs in the html file.
+If you want to avoid this, you can pass `self_contained = FALSE` to
+the function.
+However, for the purpose of this documentation with pkgdown, we need to reference
+the path like this:
 
 ```{r}
 svelteR::include_svelte(name = "svelte-app",
                         # path relative to your Rmd file
-                        path = system.file("svelte-app", package = "svelteR"),
-                        props = list(name = "Second"))
+                        path = "../inst/svelte-app",
+                        props = list(name = "First"))
 ```
 
-> Note: For deployment inside of this documentation page,
-  this yaml option was necessary:
-  ```
-  resource_files:
-  - '`r system.file("svelte-app", package = "svelteR")`'
-  ```
+And include the app as a resource in the yaml header:
+
+```
+resource_files:
+  - '../inst/svelte-app/'
+```
+
+And again:
+
+```{r}
+svelteR::include_svelte(name = "svelte-app",
+                        path = "../inst/svelte-app",
+                        props = list(name = "Second"))
+```
 
 ## CSS Priority
 

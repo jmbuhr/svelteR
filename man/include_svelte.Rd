@@ -4,7 +4,7 @@
 \alias{include_svelte}
 \title{Embed a Svelte App}
 \usage{
-include_svelte(name, path, props)
+include_svelte(name, path, props, self_contained = TRUE)
 }
 \arguments{
 \item{path}{:: String, path to the svelte app main directory}
