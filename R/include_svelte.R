@@ -14,13 +14,13 @@ include_svelte <- function(name, path, props) {
     glue::glue(
 "
 <div id='{label}'></div>
-<link rel='stylesheet' href='{path}public/global.css'>
-<link rel='stylesheet' href='{path}public/build/bundle.css'>
+<link rel='stylesheet' href='{path}/public/global.css'>
+<link rel='stylesheet' href='{path}/public/build/bundle.css'>
 <script>
 function load{label}() {{
   window['{name}']('{label}', {as.character(jsonlite::toJSON(props))})
 }}
 </script>
-<script async onload='load{label}()' src='{path}public/build/bundle.js'></script>
+<script async onload='load{label}()' src='{path}/public/build/bundle.js'></script>
 "))
 }

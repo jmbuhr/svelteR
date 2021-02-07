@@ -1,12 +1,13 @@
 <script>
 	export let name;
-	import cat from "./Cat-Sleeping-Pics.jpg"
+	import cat from "./cat.jpeg"
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-	<img src={cat} alt="A cat!"/>
+	<img id="cat" src={cat} alt="A cat!"/>
+	<p>Cat image from wikipedia: <a href="https://en.wikipedia.org/wiki/Cat_senses">source</a> </p>
 </main>
 
 <style>
@@ -22,6 +23,10 @@
 		text-transform: uppercase;
 		font-size: 4em;
 		font-weight: 100;
+	}
+
+	#cat {
+	  max-width: 70%;
 	}
 
 	@media (min-width: 640px) {

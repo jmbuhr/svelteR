@@ -23,4 +23,13 @@ Or when using the `renv` package for a local package library:
 renv::install("jmbuhr/svelteR")
 ```
 
-## Example
+## Features
+
+Embed the same app multiple times with different properties:
+
+``` r
+svelteR::include_svelte(name = "svelte-app",
+                        # path relative to your Rmd file
+                        path = system.file("svelte-app", package = "svelteR"),
+                        props = list(name = "First"))
+```
