@@ -1,0 +1,32 @@
+---
+title: "Hello SvelteR"
+author: "Jannik Buhr"
+date: "2/2/2021"
+output:
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Setup
+
+# Examples
+
+## Svelte App One
+
+```{r, echo=FALSE}
+svelteR::include_svelte(name = "svelte-app",
+                        path = "svelte-app/",
+                        props = list(name = "First"))
+```
+
+## The same App but different poperty
+
+```{r, echo=FALSE}
+svelteR::include_svelte(name = "svelte-app",
+                        path = "svelte-app/",
+                        props = list(name = "Second"))
+```
+

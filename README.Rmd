@@ -1,0 +1,39 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# svelteR
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of svelteR is to fluently embed svelte apps into Rmarkdown documents
+producing html output.
+
+## Installation
+
+You can install svelteR from [GitHub](https://github.com/) with:
+
+```{r, eval=FALSE}
+remotes::install_github("jmbuhr/svelteR")
+```
+
+Or when using the `renv` package for a local package library:
+
+```{r, eval=FALSE}
+renv::install("jmbuhr/svelteR")
+```
+
+## Example
+
