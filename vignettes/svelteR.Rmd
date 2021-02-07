@@ -1,6 +1,9 @@
 ---
 title: "Get Started"
+resource_files:
+  - '`r system.file("svelte-app", package = "svelteR")`'
 ---
+
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
@@ -85,13 +88,6 @@ This will create the necessary files in a folder of your app named
 
 ## Demo Time!
 
-debug gh-pages actions:
-
-```{r}
-system.file("svelte-app", package = "svelteR")
-```
-
-
 Embed the same app multiple times with different properties.
 `props` takes and R list which is converted to JSON to be used
 in the app:
@@ -111,6 +107,13 @@ svelteR::include_svelte(name = "svelte-app",
                         path = system.file("svelte-app", package = "svelteR"),
                         props = list(name = "Second"))
 ```
+
+> Note: For deployment inside of this documentation page,
+  this yaml option was necessary:
+  ```
+  resource_files:
+  - '`r system.file("svelte-app", package = "svelteR")`'
+  ```
 
 ## CSS Priority
 
