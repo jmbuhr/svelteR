@@ -30,4 +30,5 @@ renv::install("jmbuhr/svelteR")
 -   Embed from a local folder or a public url (the second is work in
     process)
 
-See this [example](articles/svelteR.html#demo-time-)
+See this
+[example](https://jmbuhr.de/svelteR/articles/svelteR.html#demo-time-)

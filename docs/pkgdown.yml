@@ -3,7 +3,7 @@ pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
   svelteR: svelteR.html
-last_built: 2021-02-07T21:36Z
+last_built: 2021-02-08T10:02Z
 urls:
   reference: https://jmbuhr.de/svelteR/reference
   article: https://jmbuhr.de/svelteR/articles
