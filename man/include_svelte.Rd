@@ -7,7 +7,13 @@
 include_svelte(name, path, props, self_contained = TRUE)
 }
 \arguments{
+\item{name}{:: String, name of the svelte app, usually the same as
+the name of the directory}
+
 \item{path}{:: String, path to the svelte app main directory}
+
+\item{props}{:: List, An R list of properties passed to the svelte-app.
+Will be automatically converted to JSON.}
 }
 \value{
 Code that is inserted into the output document
@@ -15,4 +21,6 @@ Code that is inserted into the output document
 \description{
 Use this function to embed a svelte app from a directory / file-path into your
 output document (needs to be html).
+Check out this article for the svelte-app setup:
+\url{https://jmbuhr.de/svelteR/articles/svelteR.html}
 }

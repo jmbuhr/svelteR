@@ -41,7 +41,9 @@
 
 <meta property="og:title" content="Embed a Svelte App — include_svelte" />
 <meta property="og:description" content="Use this function to embed a svelte app from a directory / file-path into your
-output document (needs to be html)." />
+output document (needs to be html).
+Check out this article for the svelte-app setup:
+https://jmbuhr.de/svelteR/articles/svelteR.html" />
 
 
 
@@ -122,7 +124,9 @@ output document (needs to be html)." />
 
     <div class="ref-description">
     <p>Use this function to embed a svelte app from a directory / file-path into your
-output document (needs to be html).</p>
+output document (needs to be html).
+Check out this article for the svelte-app setup:
+<a href='https://jmbuhr.de/svelteR/articles/svelteR.html'>https://jmbuhr.de/svelteR/articles/svelteR.html</a></p>
     </div>
 
     <pre class="usage"><span class='fu'>include_svelte</span><span class='op'>(</span><span class='va'>name</span>, <span class='va'>path</span>, <span class='va'>props</span>, self_contained <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
@@ -131,8 +135,18 @@ output document (needs to be html).</p>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>name</th>
+      <td><p>:: String, name of the svelte app, usually the same as
+the name of the directory</p></td>
+    </tr>
+    <tr>
       <th>path</th>
       <td><p>:: String, path to the svelte app main directory</p></td>
+    </tr>
+    <tr>
+      <th>props</th>
+      <td><p>:: List, An R list of properties passed to the svelte-app.
+Will be automatically converted to JSON.</p></td>
     </tr>
     </table>
 

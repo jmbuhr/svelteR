@@ -86,11 +86,12 @@
 <div id="setup" class="section level2">
 <h2 class="hasAnchor">
 <a href="#setup" class="anchor"></a>Setup</h2>
-<p><code>svelteR</code> assumes that the app structure was created using this <a href="https://github.com/sveltejs/template">svelte template</a>. In short, you ran this code in a terminal:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npx</span> degit sveltejs/template svelte-app</span>
+<p><code>svelteR</code> assumes that the app structure is structured in a way similar to this <a href="https://github.com/sveltejs/template">svelte template</a>. There is only two minor modifications that you need to perform on <code>main.js</code> and <code>index.html</code>. You can either do those after the fact by looking at the code following this section, or by using our fork of the template with those modifications included.</p>
+<p>In short, you run this code in a terminal:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npx</span> degit jmbuhr/svelteR-template svelte-app</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> svelte-app</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install</span></code></pre></div>
-<p>Where “svelte-app” is the name of the folder you want to create the app in. There are two things you need to take care of in your svelte app to ensure that it works as a standalone app, as well as embedded into this document.</p>
+<p>Where “svelte-app” is the name of the folder you want to create the app in. Here are the two files modified to ensure that it works as a standalone app, as well as embedded into this document.</p>
 <p>Modify <code>index.html</code> to look like this:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">"en"</span><span class="kw">&gt;</span></span>
@@ -114,11 +115,9 @@
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">props</span><span class="op">:</span> props</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">// 'svelte-app' has to be a unique name for your app.</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">// make sure it is the same as in window['svelte-app'] in index.html</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">// a good convention is to use the name of your app-directory</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="bu">window</span>[<span class="st">'svelte-app'</span>] <span class="op">=</span> app<span class="op">;</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> app<span class="op">;</span></span></code></pre></div>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="bu">window</span>[<span class="st">'svelte-app'</span>] <span class="op">=</span> app<span class="op">;</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> app<span class="op">;</span></span></code></pre></div>
+<p>Note that ‘svelte-app’ has to be a unique name for your app. Make sure it is the same in <code>window['svelte-app']</code> in <code>index.html</code> and in <code>src/main.js</code>. A good convention is to use the name of your app-directory</p>
 <p><code>app</code> is now a function of a <code>targetID</code> and some properties. This allows us to include the same app multiple times into different divs and pass different properties to them.</p>
 <p>Then run the following in the app directory to preview the app on localhost while working:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run dev</span></code></pre></div>
@@ -138,7 +137,6 @@
 <p>This will embed everything the app needs in the html file. If you want to avoid this, you can pass <code>self_contained = FALSE</code> to the function. However, for the purpose of this documentation with pkgdown, we need to reference the path like this:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">svelteR</span><span class="fu">::</span><span class="fu"><a href="../reference/include_svelte.html">include_svelte</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"svelte-app"</span>,
-                        <span class="co"># path relative to your Rmd file</span>
                         path <span class="op">=</span> <span class="st">"../inst/svelte-app"</span>,
                         props <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"First"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <div id="unnamedchunk6">
@@ -177,6 +175,12 @@ function loadunnamedchunk7() {
 <li>Custom css for your Rmarkdown document, under which the bootstrap framework of this documentation site made with pkgdown falls, will have precedence over <code>global.css</code> in your <code>svelte-app/public/</code> folder.</li>
 <li>css defined in individual components of the svelte app, or the main <code>App.svelte</code> will have precedence over both.</li>
 </ul>
+</div>
+<div id="try-it-out" class="section level2">
+<h2 class="hasAnchor">
+<a href="#try-it-out" class="anchor"></a>Try it out!</h2>
+<p><code>svelteR</code> should work with most Rmarkdown output formats that produce html files. This includes <a href="https://github.com/yihui/xaringan">Xaringan</a> presentations, which I am personally very excited about!</p>
+<p><img src="images/paste-7AFD3DB3.png"></p>
 </div>
   </div>
 

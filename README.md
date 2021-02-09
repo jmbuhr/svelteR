@@ -1,6 +1,3 @@
-
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
 # svelteR
 
 <!-- badges: start -->
@@ -29,6 +26,9 @@ renv::install("jmbuhr/svelteR")
 -   Embed multiple different apps
 -   Embed from a local folder or a public url (the second is work in
     process)
+-   Works with most html output formats. i.e. not only `html_document`
+    but also [Xaringan](https://github.com/yihui/xaringan)
+    presentations!
 
 See this
 [example](https://jmbuhr.de/svelteR/articles/svelteR.html#demo-time-)
