@@ -148,6 +148,15 @@ the name of the directory</p></td>
       <td><p>:: List, An R list of properties passed to the svelte-app.
 Will be automatically converted to JSON.</p></td>
     </tr>
+    <tr>
+      <th>self_contained</th>
+      <td><p>:: Boolean. By default, Rmarkdown's html_document is
+self contained, meaning it includes all images and external code automatically
+into one html file. Setting <code>self_contained = FALSE</code> will set the pandoc option
+<code>"data-external='1'"</code> on the source attributes of the svelte code,
+allowing the scripts and css to be linked-in externally instead of included
+in the one-file document.</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>

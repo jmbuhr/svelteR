@@ -91,7 +91,7 @@
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npx</span> degit jmbuhr/svelteR-template svelte-app</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> svelte-app</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install</span></code></pre></div>
-<p>Where “svelte-app” is the name of the folder you want to create the app in. Here are the two files modified to ensure that it works as a standalone app, as well as embedded into this document.</p>
+<p>Where “svelte-app” is the name of the folder you want to create the app in. Here are the 3 files modified to ensure that it works as a standalone app, as well as embedded into this document.</p>
 <p>Modify <code>index.html</code> to look like this:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">"en"</span><span class="kw">&gt;</span></span>
@@ -102,70 +102,79 @@
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">'icon'</span><span class="ot"> type=</span><span class="st">'image/png'</span><span class="ot"> href=</span><span class="st">'/favicon.png'</span><span class="kw">&gt;</span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">'stylesheet'</span><span class="ot"> href=</span><span class="st">'/global.css'</span><span class="kw">&gt;</span></span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">'stylesheet'</span><span class="ot"> href=</span><span class="st">'/build/bundle.css'</span><span class="kw">&gt;</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;script</span><span class="ot"> defer onload=</span><span class="st">"window['svelte-app']('body', {name: 'main test'})"</span><span class="ot"> src=</span><span class="st">'/build/bundle.js'</span><span class="kw">&gt;&lt;/script&gt;</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body</span><span class="ot"> id=</span><span class="st">"body"</span><span class="kw">&gt;</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
-<p>And <code>src/main.js</code> like this:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> App <span class="im">from</span> <span class="st">'./App.svelte'</span><span class="op">;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> app <span class="op">=</span> (targetId<span class="op">,</span> props) <span class="kw">=&gt;</span> <span class="kw">new</span> <span class="fu">App</span>({</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">target</span><span class="op">:</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(targetId)<span class="op">,</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">props</span><span class="op">:</span> props</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="bu">window</span>[<span class="st">'svelte-app'</span>] <span class="op">=</span> app<span class="op">;</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> app<span class="op">;</span></span></code></pre></div>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">'/dev_props.js'</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;script</span><span class="ot"> defer onload=</span><span class="st">"window['svelte-app']('body', props)"</span><span class="ot"> src=</span><span class="st">'/build/bundle.js'</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body</span><span class="ot"> id=</span><span class="st">"body"</span><span class="kw">&gt;</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<p>Inside of <code>public/dev_prop.js</code> define the properties of your app for development e.g.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>props <span class="op">=</span> {<span class="st">"name"</span><span class="op">:</span> <span class="st">"App Name"</span>}<span class="op">;</span></span></code></pre></div>
+<p>You can fill this file with data from R using the function <code>write_dev_props</code> e.g.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/write_dev_props.html">write_dev_props</a></span><span class="op">(</span>path <span class="op">=</span> <span class="st">"svelte-app"</span>,
+                props <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"App Name"</span>,
+                             devData <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<p>Lastly, modify <code>src/main.js</code> like this:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> App <span class="im">from</span> <span class="st">'./App.svelte'</span><span class="op">;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> app <span class="op">=</span> (targetId<span class="op">,</span> props) <span class="kw">=&gt;</span> <span class="kw">new</span> <span class="fu">App</span>({</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">target</span><span class="op">:</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(targetId)<span class="op">,</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">props</span><span class="op">:</span> props</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="bu">window</span>[<span class="st">'svelte-app'</span>] <span class="op">=</span> app<span class="op">;</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> app<span class="op">;</span></span></code></pre></div>
 <p>Note that ‘svelte-app’ has to be a unique name for your app. Make sure it is the same in <code>window['svelte-app']</code> in <code>index.html</code> and in <code>src/main.js</code>. A good convention is to use the name of your app-directory</p>
 <p><code>app</code> is now a function of a <code>targetID</code> and some properties. This allows us to include the same app multiple times into different divs and pass different properties to them.</p>
 <p>Then run the following in the app directory to preview the app on localhost while working:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run dev</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run dev</span></code></pre></div>
 <p>And finally build the app (so that you can ship it or include it in this document):</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run build</span></code></pre></div>
-<p>This will create the necessary files in a folder of your app named “public/build/”, which <code>svelteR</code> assumes to exist.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run build</span></code></pre></div>
 </div>
 <div id="demo-time" class="section level2">
 <h2 class="hasAnchor">
 <a href="#demo-time" class="anchor"></a>Demo Time!</h2>
 <p>Embed the same app multiple times with different properties. <code>props</code> takes and R list which is converted to JSON to be used in the app. The path should be relative to you Rmd file. You can use the example app installed with this package via:</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">svelteR</span><span class="fu">::</span><span class="fu"><a href="../reference/include_svelte.html">include_svelte</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"svelte-app"</span>,
                         <span class="co"># path relative to your Rmd file</span>
                         path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"svelte-app"</span>, package <span class="op">=</span> <span class="st">"svelteR"</span><span class="op">)</span>,
                         props <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"First"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p>This will embed everything the app needs in the html file. If you want to avoid this, you can pass <code>self_contained = FALSE</code> to the function. However, for the purpose of this documentation with pkgdown, we need to reference the path like this:</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">svelteR</span><span class="fu">::</span><span class="fu"><a href="../reference/include_svelte.html">include_svelte</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"svelte-app"</span>,
-                        path <span class="op">=</span> <span class="st">"../inst/svelte-app"</span>,
-                        props <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"First"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<div id="unnamedchunk6">
-
-</div>
-<link rel="stylesheet" href="../inst/svelte-app/public/global.css">
-<link rel="stylesheet" href="../inst/svelte-app/public/build/bundle.css">
-<script>
-function loadunnamedchunk6() {
-  window['svelte-app']('unnamedchunk6', {"name":["First"]})
-}
-</script><script async onload="loadunnamedchunk6()" src="../inst/svelte-app/public/build/bundle.js"></script><p>And include the app as a resource in the yaml header:</p>
-<pre><code>resource_files:
-  - '../inst/svelte-app/public/'</code></pre>
-<p>And again:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">svelteR</span><span class="fu">::</span><span class="fu"><a href="../reference/include_svelte.html">include_svelte</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"svelte-app"</span>,
                         path <span class="op">=</span> <span class="st">"../inst/svelte-app"</span>,
-                        props <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Second"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+                        props <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"First"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <div id="unnamedchunk7">
 
 </div>
 <link rel="stylesheet" href="../inst/svelte-app/public/global.css">
 <link rel="stylesheet" href="../inst/svelte-app/public/build/bundle.css">
-<script>
+<script async id="svelte-app" src="../inst/svelte-app/public/build/bundle.js"></script><script>
 function loadunnamedchunk7() {
-  window['svelte-app']('unnamedchunk7', {"name":["Second"]})
+  window['svelte-app']('unnamedchunk7', {"name":["First"]})
 }
-</script><script async onload="loadunnamedchunk7()" src="../inst/svelte-app/public/build/bundle.js"></script>
+document.getElementById('svelte-app').addEventListener('load', loadunnamedchunk7)
+</script><p>And include the app as a resource in the yaml header:</p>
+<pre><code>resource_files:
+  - '../inst/svelte-app/public/'
+  </code></pre>
+<p>Once again: This is only necessary for this documentation due to the way pkgdown handles external files. You won’t have to do this step.</p>
+<p>And another example:</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">svelteR</span><span class="fu">::</span><span class="fu"><a href="../reference/include_svelte.html">include_svelte</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"svelte-app"</span>,
+                        path <span class="op">=</span> <span class="st">"../inst/svelte-app"</span>,
+                        props <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Second"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<div id="unnamedchunk8">
+
+</div>
+<script>
+function loadunnamedchunk8() {
+  window['svelte-app']('unnamedchunk8', {"name":["Second"]})
+}
+document.getElementById('svelte-app').addEventListener('load', loadunnamedchunk8)
+</script>
 </div>
 <div id="css-priority" class="section level2">
 <h2 class="hasAnchor">
@@ -181,6 +190,7 @@ function loadunnamedchunk7() {
 <a href="#try-it-out" class="anchor"></a>Try it out!</h2>
 <p><code>svelteR</code> should work with most Rmarkdown output formats that produce html files. This includes <a href="https://github.com/yihui/xaringan">Xaringan</a> presentations, which I am personally very excited about!</p>
 <p><img src="images/paste-7AFD3DB3.png"></p>
+<p>You can use svelte apps to produce interactive visualizations with a range of java script graphing libraries that fit neatly in with svelte. I recommend sending some data to your app as properties for development using <code>write_dev_props</code> and then passing data of the same structure to the apps when embedding them in your Rmarkdown document.</p>
 </div>
   </div>
 

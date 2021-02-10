@@ -27,8 +27,8 @@ cd svelte-app
 npm install
 ```
 
-Where "svelte-app" is the name of the folder you want to create the app in. Here
-are the two files modified to ensure that it works as a standalone app, as well
+Where "svelte-app" is the name of the folder you want to create the app in.
+Here are the 3 files modified to ensure that it works as a standalone app, as well
 as embedded into this document.
 
 Modify `index.html` to look like this:
@@ -43,14 +43,29 @@ Modify `index.html` to look like this:
     <link rel='icon' type='image/png' href='/favicon.png'>
     <link rel='stylesheet' href='/global.css'>
     <link rel='stylesheet' href='/build/bundle.css'>
-    <script defer onload="window['svelte-app']('body', {name: 'main test'})" src='/build/bundle.js'></script>
+  	<script src='/dev_props.js'></script>
+    <script defer onload="window['svelte-app']('body', props)" src='/build/bundle.js'></script>
 </head>
 <body id="body">
 </body>
 </html>
 ```
 
-And `src/main.js` like this:
+Inside of `public/dev_prop.js` define the properties of your app for development e.g.
+
+``` {.js}
+props = {"name": "App Name"};
+```
+
+You can fill this file with data from R using the function `write_dev_props` e.g.
+
+```{r, eval=FALSE}
+write_dev_props(path = "svelte-app",
+                props = list(name = "App Name",
+                             devData = mtcars))
+```
+
+Lastly, modify `src/main.js` like this:
 
 ``` {.js}
 import App from './App.svelte';
@@ -86,9 +101,6 @@ document):
 npm run build
 ```
 
-This will create the necessary files in a folder of your app named
-"public/build/", which `svelteR` assumes to exist.
-
 ## Demo Time!
 
 Embed the same app multiple times with different properties. `props` takes and R
@@ -118,8 +130,10 @@ And include the app as a resource in the yaml header:
 
     resource_files:
       - '../inst/svelte-app/public/'
+      
+Once again: This is only necessary for this documentation due to the way pkgdown handles external files. You won't have to do this step.
 
-And again:
+And another example:
 
 ```{r}
 svelteR::include_svelte(name = "svelte-app",
@@ -149,3 +163,9 @@ files. This includes [Xaringan](https://github.com/yihui/xaringan)
 presentations, which I am personally very excited about!
 
 ![](images/paste-7AFD3DB3.png)
+
+You can use svelte apps to produce interactive visualizations with a range of java script graphing libraries that fit neatly in with svelte.
+I recommend sending some data to your app as properties for development using `write_dev_props` and then passing data of the same structure to the apps when embedding them in your Rmarkdown document.
+
+
+

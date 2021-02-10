@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • svelteR</title>
+<title>Add app to list of unique apps — add_app • svelteR</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Add app to list of unique apps — add_app" />
+<meta property="og:description" content="Add app to list of unique apps" />
 
 
 
@@ -58,7 +59,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -111,54 +112,35 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Add app to list of unique apps</h1>
+    <small class="dont-index">Source: <a href='https://github.com/jmbuhr/svelteR/blob/master/R/include_svelte.R'><code>R/include_svelte.R</code></a></small>
+    <div class="hidden name"><code>add_app.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Add app to list of unique apps</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>add_app</span><span class='op'>(</span><span class='va'>name</span><span class='op'>)</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="add_app.html">add_app()</a></code> </p>
-        </td>
-        <td><p>Add app to list of unique apps</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="include_svelte.html">include_svelte()</a></code> </p>
-        </td>
-        <td><p>Embed a Svelte App</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="write_dev_props.html">write_dev_props()</a></code> </p>
-        </td>
-        <td><p>Write Props for Development</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>name</th>
+      <td><p>:: String, name of the app to check for uniqueness in the
+current session. New names will be added to a vector in an
+environemt called <code>svelte_apps</code>.</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Boolean value for if the app is a new app.</p>
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>

@@ -13,6 +13,13 @@
 #' @param props :: List, An R list of properties passed to the svelte-app.
 #' Will be automatically converted to JSON.
 #'
+#' @param self_contained :: Boolean. By default, Rmarkdown's html_document is
+#' self contained, meaning it includes all images and external code automatically
+#' into one html file. Setting `self_contained = FALSE` will set the pandoc option
+#' `"data-external='1'"` on the source attributes of the svelte code,
+#' allowing the scripts and css to be linked-in externally instead of included
+#' in the one-file document.
+#'
 #' @return Code that is inserted into the output document
 #' @export
 include_svelte <- function(name, path, props, self_contained = TRUE) {
@@ -49,13 +56,18 @@ include_svelte <- function(name, path, props, self_contained = TRUE) {
                onload_code))
 }
 
-# check if an app with the same name is already included:
-# Global unique app counter
+# Environment for the unique apps vector:
 .onLoad <- function(libname, pkgname) {
   svelte_apps <<- new.env()
 }
 
-# add unique apps and return whether the app is new
+#' Add app to list of unique apps
+#'
+#' @param name :: String, name of the app to check for uniqueness in the
+#' current session. New names will be added to a vector in an
+#' environemt called `svelte_apps`.
+#'
+#' @return Boolean value for if the app is a new app.
 add_app <- function(name) {
   if (exists("apps", where = svelte_apps)) {
     if (name %in% svelte_apps$apps) {
