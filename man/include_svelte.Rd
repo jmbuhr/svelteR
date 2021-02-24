@@ -10,7 +10,8 @@ include_svelte(name, path, props, self_contained = TRUE)
 \item{name}{:: String, name of the svelte app, usually the same as
 the name of the directory}
 
-\item{path}{:: String, path to the svelte app main directory}
+\item{path}{:: String, File path to the svelte-app publish directory. e.g. "svelte-app/docs"
+or "svelte-app/public"}
 
 \item{props}{:: List, An R list of properties passed to the svelte-app.
 Will be automatically converted to JSON.}

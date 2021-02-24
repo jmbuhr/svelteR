@@ -8,7 +8,8 @@
 #' @param name :: String, name of the svelte app, usually the same as
 #' the name of the directory
 #'
-#' @param path :: String, path to the svelte app main directory
+#' @param path :: String, File path to the svelte-app publish directory. e.g. "svelte-app/docs"
+#' or "svelte-app/public"
 #'
 #' @param props :: List, An R list of properties passed to the svelte-app.
 #' Will be automatically converted to JSON.
@@ -35,9 +36,9 @@ include_svelte <- function(name, path, props, self_contained = TRUE) {
 
   # include code of new app
   app_code <- ifelse(is_new_app,
-                     "<link rel='stylesheet' href='{path}/public/global.css' {external}>
-                      <link rel='stylesheet' href='{path}/public/build/bundle.css' {external}>
-                      <script async id='{name}' src='{path}/public/build/bundle.js' {external}></script>",
+                     "<link rel='stylesheet' href='{path}/global.css' {external}>
+                      <link rel='stylesheet' href='{path}/build/bundle.css' {external}>
+                      <script async id='{name}' src='{path}/build/bundle.js' {external}></script>",
                      "")
 
   # register onload with the id of the script tag for the app

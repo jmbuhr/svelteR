@@ -7,7 +7,8 @@
 write_dev_props(path, props)
 }
 \arguments{
-\item{path}{:: String, File path to the svelte-app}
+\item{path}{:: String, File path to the svelte-app publish directory. e.g. "svelte-app/docs"
+or "svelte-app/public"}
 
 \item{props}{:: Any, Any R object convertible into JSON to pass to the app}
 }
