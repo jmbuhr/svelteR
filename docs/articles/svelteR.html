@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">svelteR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0.9001</span>
       </span>
     </div>
 
@@ -48,6 +48,18 @@
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="../articles/external.html">Using External Apps</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
@@ -99,20 +111,21 @@
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">'utf-8'</span><span class="kw">&gt;</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">'viewport'</span><span class="ot"> content=</span><span class="st">'width=device-width,initial-scale=1'</span><span class="kw">&gt;</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;title&gt;</span>Svelte app<span class="kw">&lt;/title&gt;</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">'icon'</span><span class="ot"> type=</span><span class="st">'image/png'</span><span class="ot"> href=</span><span class="st">'/favicon.png'</span><span class="kw">&gt;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">'icon'</span><span class="ot"> type=</span><span class="st">'image/png'</span><span class="ot"> href=</span><span class="st">'favicon.png'</span><span class="kw">&gt;</span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">'stylesheet'</span><span class="ot"> href=</span><span class="st">'/global.css'</span><span class="kw">&gt;</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">'stylesheet'</span><span class="ot"> href=</span><span class="st">'/build/bundle.css'</span><span class="kw">&gt;</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">'/dev_props.js'</span><span class="kw">&gt;&lt;/script&gt;</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;script</span><span class="ot"> defer onload=</span><span class="st">"window['svelte-app']('body', props)"</span><span class="ot"> src=</span><span class="st">'/build/bundle.js'</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">'stylesheet'</span><span class="ot"> href=</span><span class="st">'build/bundle.css'</span><span class="kw">&gt;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">'dev_props.js'</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;script</span><span class="ot"> defer onload=</span><span class="st">"window['svelte-app']('body', props)"</span><span class="ot"> src=</span><span class="st">'build/bundle.js'</span><span class="kw">&gt;&lt;/script&gt;</span></span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body</span><span class="ot"> id=</span><span class="st">"body"</span><span class="kw">&gt;</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
-<p>Inside of <code>public/dev_prop.js</code> define the properties of your app for development e.g.</p>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body</span><span class="ot"> id=</span><span class="st">"body"</span><span class="kw">&gt;</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<p>Inside of <code>docs/dev_prop.js</code> define the properties of your app for development e.g.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>props <span class="op">=</span> {<span class="st">"name"</span><span class="op">:</span> <span class="st">"App Name"</span>}<span class="op">;</span></span></code></pre></div>
 <p>You can fill this file with data from R using the function <code>write_dev_props</code> e.g.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/write_dev_props.html">write_dev_props</a></span><span class="op">(</span>path <span class="op">=</span> <span class="st">"svelte-app"</span>,
+<code class="sourceCode R"><span class="fu"><a href="../reference/write_dev_props.html">write_dev_props</a></span><span class="op">(</span>path <span class="op">=</span> <span class="st">"svelte-app/docs"</span>,
                 props <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"App Name"</span>,
                              devData <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p>Lastly, modify <code>src/main.js</code> like this:</p>
@@ -139,32 +152,32 @@
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">svelteR</span><span class="fu">::</span><span class="fu"><a href="../reference/include_svelte.html">include_svelte</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"svelte-app"</span>,
                         <span class="co"># path relative to your Rmd file</span>
-                        path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"svelte-app"</span>, package <span class="op">=</span> <span class="st">"svelteR"</span><span class="op">)</span>,
+                        path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"svelte-app/docs"</span>, package <span class="op">=</span> <span class="st">"svelteR"</span><span class="op">)</span>,
                         props <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"First"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p>This will embed everything the app needs in the html file. If you want to avoid this, you can pass <code>self_contained = FALSE</code> to the function. However, for the purpose of this documentation with pkgdown, we need to reference the path like this:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">svelteR</span><span class="fu">::</span><span class="fu"><a href="../reference/include_svelte.html">include_svelte</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"svelte-app"</span>,
-                        path <span class="op">=</span> <span class="st">"../inst/svelte-app"</span>,
+                        path <span class="op">=</span> <span class="st">"../inst/svelte-app/docs"</span>,
                         props <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"First"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <div id="unnamedchunk7">
 
 </div>
-<link rel="stylesheet" href="../inst/svelte-app/public/global.css">
-<link rel="stylesheet" href="../inst/svelte-app/public/build/bundle.css">
-<script async id="svelte-app" src="../inst/svelte-app/public/build/bundle.js"></script><script>
+<link rel="stylesheet" href="../inst/svelte-app/docs/global.css">
+<link rel="stylesheet" href="../inst/svelte-app/docs/build/bundle.css">
+<script async id="svelte-app" src="../inst/svelte-app/docs/build/bundle.js"></script><script>
 function loadunnamedchunk7() {
   window['svelte-app']('unnamedchunk7', {"name":["First"]})
 }
 document.getElementById('svelte-app').addEventListener('load', loadunnamedchunk7)
 </script><p>And include the app as a resource in the yaml header:</p>
 <pre><code>resource_files:
-  - '../inst/svelte-app/public/'
+  - '../inst/svelte-app/docs/'
   </code></pre>
 <p>Once again: This is only necessary for this documentation due to the way pkgdown handles external files. You won’t have to do this step.</p>
 <p>And another example:</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">svelteR</span><span class="fu">::</span><span class="fu"><a href="../reference/include_svelte.html">include_svelte</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"svelte-app"</span>,
-                        path <span class="op">=</span> <span class="st">"../inst/svelte-app"</span>,
+                        path <span class="op">=</span> <span class="st">"../inst/svelte-app/docs"</span>,
                         props <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Second"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <div id="unnamedchunk8">
 
@@ -181,7 +194,7 @@ document.getElementById('svelte-app').addEventListener('load', loadunnamedchunk8
 <a href="#css-priority" class="anchor"></a>CSS Priority</h2>
 <p>Note that the demo app included in this package (see <code><a href="https://rdrr.io/r/base/system.file.html">system.file("svelte-app", package = "svelteR")</a></code>) looks slightly different when built on it’s own, in a fresh Rmarkdown document or in this pkgdown documentation website. The reason for this is the order in which css files are imported. I am willing to sell this as a feature instead of a bug. You can use this to your advantage, if you know the rules. So here they come:</p>
 <ul>
-<li>Custom css for your Rmarkdown document, under which the bootstrap framework of this documentation site made with pkgdown falls, will have precedence over <code>global.css</code> in your <code>svelte-app/public/</code> folder.</li>
+<li>Custom css for your Rmarkdown document, under which the bootstrap framework of this documentation site made with pkgdown falls, will have precedence over <code>global.css</code> in your <code>svelte-app/docs/</code> folder.</li>
 <li>css defined in individual components of the svelte app, or the main <code>App.svelte</code> will have precedence over both.</li>
 </ul>
 </div>

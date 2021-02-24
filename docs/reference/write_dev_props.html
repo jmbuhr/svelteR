@@ -74,7 +74,7 @@ with any R object convertible into JSON." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">svelteR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0.9001</span>
       </span>
     </div>
 
@@ -91,6 +91,18 @@ with any R object convertible into JSON." />
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/external.html">Using External Apps</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
@@ -134,7 +146,8 @@ with any R object convertible into JSON.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>path</th>
-      <td><p>:: String, File path to the svelte-app</p></td>
+      <td><p>:: String, File path to the svelte-app publish directory. e.g. "svelte-app/docs"
+or "svelte-app/public"</p></td>
     </tr>
     <tr>
       <th>props</th>

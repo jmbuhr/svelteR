@@ -1,0 +1,23 @@
+---
+title: "Using External Apps"
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## GitHub Pages
+
+
+```{r}
+library(svelteR)
+
+include_svelte(name = "svelte-app",
+               path = "https://jmbuhr.de/werwolf-app",
+               props = list())
+```
+
+
