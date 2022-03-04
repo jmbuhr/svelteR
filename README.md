@@ -32,3 +32,4 @@ renv::install("jmbuhr/svelteR")
 
 See this
 [example](https://jmbuhr.de/svelteR/articles/svelteR.html#demo-time-)
+
